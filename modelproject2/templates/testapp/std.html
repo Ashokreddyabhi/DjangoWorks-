@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Student data</title>
+    <link rel="stylesheet" href="{% static 'css/std.css' %}">
+
+  </head>
+  <body>
+    <h1>Student info</h1>
+    {% if student_list %}
+    {% for student in student_list %}
+    <h2>{{student.name}} info </h2>
+    <ul>
+      <li>Student rollno:{{student.rollno}}</li>
+      <li>Student DOB:{{student.dob}}</li>
+      <li>Student marks:{{student.marks}}</li>
+      <li>Student email:{{student.email}}</li>
+      <li>Student Phone Number:{{student.phonenumber}}</li>
+      <li>Student Address:{{student.address}}</li>
+    </ul>
+    <br>
+    {% endfor %}
+    {% else %}
+    <h2>records not found in database </h2>
+    {% endif %}
+  </body>
+</html>
